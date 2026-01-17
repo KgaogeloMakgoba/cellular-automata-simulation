@@ -64,7 +64,7 @@
           }
 
        //Returns a random number in the range of intLower and intUpper
-         int GetRand(int intLower, int intUpper)
+         int GetRandom(int intLower, int intUpper)
               {
                 int intNum;
                 int intRange = intUpper - intLower + 1;
@@ -79,6 +79,46 @@
              cin.get();
 
              }
+
+         void RandomArray(QueueType arrCells, int intArrCount)
+            {
+              //Loop through each array value
+              for(int i=0;i<intArrCount;i++)
+                {
+                //Generate either a zero or one
+                  int intRandNum = GetRandom(0,1);
+                  if(intRandNum==0)
+                  arrCells[i] = false;
+                  else
+
+                  arrCells[i] = true;
+                }
+            }
+
+         //Guarantees an integer returned from the std input stream.
+         int GetInt()
+            {
+             int intNum;
+             cin >> intNum;
+             while(cin.fail())
+                {
+                 cerr << "Could not convert to integer. Please only type a number. Please retry:" << endl;
+                 string strJunk;
+                 cin >> strJunk;
+                 cin >> intNum;
+                }
+               return intNum;
+            }
+
+
+            //Makes a copy of arrTwo, into arrOne
+        void CopyArray(QueueType arrOne, QueueType arrTwo, int intCount)
+           {
+            for(int i=0;i<intCount;i++)
+               {
+                arrOne[i] = arrTwo[i];
+               }
+           }
 
 
    }

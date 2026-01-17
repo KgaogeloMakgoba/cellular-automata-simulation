@@ -30,8 +30,12 @@
      QueueType InitArray(int intCount); //Returns an array of boolean values
      void RemoveArray(QueueType& arrCells); //Deallocate the memory of an array
      void OutputArr(QueueType arrCells, int intArrCount); //Print the array
-     int GetRand(int intLower, int intUpper); //Returns a random number between the range
+     int GetRandom(int intLower, int intUpper); //Returns a random number between the range
      void Pause();
+     void RandomArray(QueueType arrCells, int intArrCount);
+     int GetInt();
+     void CopyArray(QueueType arrOne, QueueType arrTwo, int intCount);
+
 
    }
 
