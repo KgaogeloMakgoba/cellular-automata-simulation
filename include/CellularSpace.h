@@ -35,6 +35,12 @@
      void RandomArray(QueueType arrCells, int intArrCount);
      int GetInt();
      void CopyArray(QueueType arrOne, QueueType arrTwo, int intCount);
+     void Evolve(QueueType arrCells, int intArrCount);
+     void RunEvolution(QueueType arrCells, int intArrCount, int intRounds);
+     void OutputIndex(int intIndex, int intArrCount);
+     void ManualArray(QueueType arrCells, int intArrCount);
+     int GetRounds();
+
 
 
    }

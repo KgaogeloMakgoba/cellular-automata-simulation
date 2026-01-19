@@ -34,6 +34,50 @@
      char chInput = '\0';
      QueueType arrCells = InitArray(intArrCount);
 
+    //Main loop
+     do
+       {
+        //Output the menu options here
+          #ifdef __linux__
+          system("clear");
+          #elif _WIN32
+          system("cls");
+          #endif
+          cout << "1.) Set the number of rounds to run the algorithm" << endl;
+          cout << "2.) Create an initial random pattern" << endl;
+          cout << "3.) Set a manual initial pattern" << endl;
+          cout << "4.) Run the algorithm" << endl;
+          cout << "0.) Quit" << endl;
+          //Output the initial array
+          cout << "Number of rounds:" << intLoopCount << endl;
+          OutputArr(arrCells,intArrCount);
+          //Get input from user
+          cin >> chInput;
+          switch(chInput)
+                {
+                  case '1':
+                      intLoopCount = GetRounds();
+                      break;
+                  case '2':
+                      RandomArray(arrCells,intArrCount);
+                      break;
+                  case '3':
+                      ManualArray(arrCells,intArrCount);
+                      break;
+                  case '4':
+                      RunEvolution(arrCells,intArrCount,intLoopCount);
+                      break;
+                  case '0':
+                      blnContinue = false;
+                      break;
+                  default:
+                      cerr << "Invalid option. Please retry";
+                }
+
+        }while(blnContinue);
+
+       RemoveArray(arrCells);
+
 
 
    return SUCCESS;
